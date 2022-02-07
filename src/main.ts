@@ -7,6 +7,7 @@ import { Construct } from 'constructs';
 import { HitCounter } from './hitcounter';
 
 export class WorkshopStack extends Stack {
+  /*testing some junk*/
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
