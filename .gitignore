@@ -31,13 +31,17 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
-.idea/*
+*/.idea/*
 !/.projenrc.js
 /test-reports/
 junit.xml
 /coverage/
 !/.github/workflows/build.yml
+/dist/changelog.md
+/dist/version.txt
+!/.github/workflows/release.yml
 !/.mergify.yml
+!/.github/dependabot.yml
 !/.github/pull_request_template.md
 !/.prettierignore
 !/.prettierrc.json
@@ -53,4 +57,3 @@ junit.xml
 /cdk.out/
 .cdk.staging/
 .parcel-cache/
-!/.github/workflows/upgrade.yml
