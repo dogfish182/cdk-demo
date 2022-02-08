@@ -20,12 +20,11 @@ jobs:
           aws-region: eu-west-1
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          path: cdk-demo
+      - name: Install dependencies
+        run: yarn install --check-files
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
-          working_dir: 'cdk-demo'
           cdk_subcommand: 'deploy'
           cdk_stack: 'WorkshopStack'
           cdk_args: '--require-approval never'
