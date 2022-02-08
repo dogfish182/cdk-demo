@@ -12,19 +12,20 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v2
-        with:
-          path: cdk-demo
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
           role-to-assume: arn:aws:iam::758793629524:role/ghawker-githubworkflow-actions
           role-session-name: deploymentsession
           aws-region: eu-west-1
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          path: cdk-demo
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
-          working_dir: 'src'
+          working_dir: 'cdk-demo'
           cdk_subcommand: 'deploy'
           cdk_stack: 'WorkshopStack'
           cdk_args: '--require-approval never'
