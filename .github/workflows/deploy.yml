@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: write
+      contents: read
     steps:
       - uses: actions/checkout@v2
         with:
@@ -18,7 +18,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ secrets.AWS_DEPLOYMENT_ROLE }}
+          role-to-assume: arn:aws:iam::758793629524:role/ghawker-githubworkflow-actions
+          role-session-name: deploymentsession
           aws-region: eu-west-1
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
