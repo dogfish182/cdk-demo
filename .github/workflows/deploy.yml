@@ -1,6 +1,6 @@
 name: "deploy development"
 on:
-  push:
+  pull_request:
     paths:
       - "src/**"
     branches:
