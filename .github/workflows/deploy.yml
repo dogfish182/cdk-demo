@@ -16,7 +16,7 @@ jobs:
         with:
           path: cdk-demo
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@master
         with:
           role-to-assume: arn:aws:iam::758793629524:role/ghawker-githubworkflow-actions
           role-session-name: deploymentsession
