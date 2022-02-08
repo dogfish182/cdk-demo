@@ -664,7 +664,7 @@ Object {
       "Type": "AWS::KMS::Key",
       "UpdateReplacePolicy": "Retain",
     },
-    "StorageBucketmikesbigbucketogravyA82D0197": Object {
+    "StorageBucketmikesbigbucketogravysD1DF7C23": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
         "BucketEncryption": Object {
@@ -674,7 +674,7 @@ Object {
               "ServerSideEncryptionByDefault": Object {
                 "KMSMasterKeyID": Object {
                   "Fn::GetAtt": Array [
-                    "StorageBucketmikesbigbucketogravyKey55861A34",
+                    "StorageBucketmikesbigbucketogravysKey26F16DEC",
                     "Arn",
                   ],
                 },
@@ -687,7 +687,7 @@ Object {
           "Fn::Join": Array [
             "",
             Array [
-              "mikes-big-bucket-o-gravy-",
+              "mikes-big-bucket-o-gravys-",
               Object {
                 "Ref": "AWS::AccountId",
               },
@@ -698,10 +698,10 @@ Object {
       "Type": "AWS::S3::Bucket",
       "UpdateReplacePolicy": "Retain",
     },
-    "StorageBucketmikesbigbucketogravyKey55861A34": Object {
+    "StorageBucketmikesbigbucketogravysKey26F16DEC": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "Description": "Created by test/StorageBucketmikes-big-bucket-o-gravy",
+        "Description": "Created by test/StorageBucketmikes-big-bucket-o-gravys",
         "KeyPolicy": Object {
           "Statement": Array [
             Object {

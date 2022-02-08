@@ -29,7 +29,7 @@ export class WorkshopStack extends Stack {
       sortBy: "-hits",
     });
     const buckets: string[] = [
-      "mikes-big-bucket-o-gravy",
+      "mikes-big-bucket-o-gravys",
       "jimmys-dance-festival-tickets",
     ];
     buckets.forEach((bucket) => {

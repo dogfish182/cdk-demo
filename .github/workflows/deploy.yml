@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "src/**"
+      - "lambda/**"
     branches:
       - "develop"
 jobs:
@@ -12,15 +13,16 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v2
-        with:
-          path: cdk-demo
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@master
         with:
           role-to-assume: arn:aws:iam::758793629524:role/ghawker-githubworkflow-actions
           role-session-name: deploymentsession
           aws-region: eu-west-1
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install --check-files
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
