@@ -24,6 +24,7 @@ jobs:
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
+          working_dir: 'src'
           cdk_subcommand: 'deploy'
           cdk_stack: 'WorkshopStack'
           cdk_args: '--require-approval never'
