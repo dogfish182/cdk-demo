@@ -43,14 +43,14 @@ export class WorkshopStack extends Stack {
 }
 
 // for development, use account/region from cdk cli
-const devEnv = {
+const genericEnv = {
   account: process.env.CDK_DEFAULT_ACCOUNT,
   region: process.env.CDK_DEFAULT_REGION,
 };
 
 const app = new App();
 
-new WorkshopStack(app, "WorkshopStack", { env: devEnv });
+new WorkshopStack(app, "WorkshopStack", { env: genericEnv });
 // new MyStack(app, 'my-stack-dev', { env: devEnv });
 // new MyStack(app, 'my-stack-prod', { env: prodEnv });
 

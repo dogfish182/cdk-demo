@@ -12,7 +12,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   },
   deps: ["aws-cdk-lib", "cdk-dynamo-table-viewer", "constructs"],
   // devDeps: [],             /* Build dependencies for this module. */
-  gitignore: ["*/.idea/*"],
+  gitignore: [".idea/*"],
   name: "projen",
   prettier: true,
   releaseWorkflow: true,

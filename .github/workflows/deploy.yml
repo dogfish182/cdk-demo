@@ -1,0 +1,31 @@
+name: "deploy development"
+on:
+  push:
+    paths:
+      - "src/**"
+    branches:
+      - "develop"
+jobs:
+  deploy-development:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: cdk-demo
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOYMENT_ROLE }}
+          aws-region: eu-west-1
+      - name: cdk deploy
+        uses: youyo/aws-cdk-github-actions@v2
+        with:
+          cdk_subcommand: 'deploy'
+          cdk_stack: 'WorkshopStack'
+          cdk_args: '--require-approval never'
+          actions_comment: false
+        env:
+          AWS_DEFAULT_REGION: 'eu-west-1'
