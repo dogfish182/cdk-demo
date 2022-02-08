@@ -1,8 +1,9 @@
 name: "deploy development"
 on:
-  pull_request:
+  push:
     paths:
       - "src/**"
+      - "lambda/**"
     branches:
       - "develop"
 jobs:
